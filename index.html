@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="tr">
 <head>
@@ -20,241 +21,142 @@
     }
 
     body {
-      background-color: #ffffff;
+      background-color: #fcfcfc;
       color: #111111;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      overflow-x: hidden;
+      align-items: center;
+      padding: 2rem 1rem 1rem 1rem;
     }
 
-    /* Üst Bar (Navbar) */
-    .navbar {
+    /* Ana Konteyner */
+    .container {
+      width: 100%;
+      max-width: 520px;
+      margin: auto 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    /* Başlık Alanı */
+    .hero-title {
+      font-size: 2.6rem;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      color: #000000;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero-subtitle {
+      font-size: 1.05rem;
+      color: #666666;
+      font-weight: 400;
+      margin-bottom: 2rem;
+      line-height: 1.4;
+    }
+
+    /* Arama Yap Butonu (CTA) */
+    .call-btn {
+      width: 100%;
       display: flex;
       align-items: center;
-      padding: 1.5rem 2rem;
-      background: #ffffff;
-      position: relative;
-      z-index: 100;
-    }
-
-    /* Sol Üst Hamburger Buton */
-    .hamburger-btn {
-      background: none;
-      border: none;
-      cursor: pointer;
-      display: flex;
-      flex-direction: column;
-      gap: 5px;
-      padding: 5px;
-    }
-
-    .hamburger-btn span {
-      width: 24px;
-      height: 2px;
-      background-color: #000000;
-      border-radius: 1px;
-      transition: all 0.3s ease;
-    }
-
-    /* Arka Plan Karartma (Overlay) */
-    .overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.4);
-      opacity: 0;
-      visibility: hidden;
-      transition: all 0.3s ease;
-      z-index: 900;
-    }
-
-    .overlay.active {
-      opacity: 1;
-      visibility: visible;
-    }
-
-    /* Yan Açılır Menü (Slide-in) */
-    .side-menu {
-      position: fixed;
-      top: 0;
-      left: -320px;
-      width: 300px;
-      height: 100%;
-      background-color: #ffffff;
-      box-shadow: 2px 0 15px rgba(0, 0, 0, 0.1);
-      transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      z-index: 1000;
-      display: flex;
-      flex-direction: column;
-      padding: 2rem 1.5rem;
-      overflow-y: auto;
-    }
-
-    .side-menu.active {
-      left: 0;
-    }
-
-    /* Menü Kapatma (Çarpı) Butonu */
-    .close-btn {
-      align-self: flex-end;
-      background: none;
-      border: none;
-      font-size: 1.8rem;
-      color: #000000;
-      cursor: pointer;
-      line-height: 1;
-      padding: 5px;
-      margin-bottom: 1.5rem;
-    }
-
-    /* Menü İçi İletişim Butonu */
-    .call-btn {
-      display: block;
+      justify-content: center;
+      gap: 10px;
       background-color: #000000;
       color: #ffffff;
       text-decoration: none;
-      text-align: center;
-      padding: 0.82rem 1rem;
-      border-radius: 8px;
+      padding: 1rem 1.5rem;
+      border-radius: 12px;
       font-weight: 600;
-      font-size: 1rem;
+      font-size: 1.15rem;
       margin-bottom: 2rem;
-      transition: background-color 0.2s ease;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+      transition: transform 0.2s ease, background-color 0.2s ease;
     }
 
     .call-btn:active {
-      background-color: #333333;
+      transform: scale(0.98);
+      background-color: #222222;
     }
 
-    /* Menü İçi Hakkında Bölümü */
-    .menu-about {
-      border-top: 1px solid #eeeeee;
-      padding-top: 1.5rem;
+    /* Bilgi Kartı */
+    .info-card {
+      width: 100%;
+      background: #ffffff;
+      border: 1px solid #eaeaea;
+      border-radius: 16px;
+      padding: 1.8rem 1.5rem;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+      text-align: left;
     }
 
-    .menu-about .person-name {
-      font-size: 1.15rem;
+    .person-name {
+      font-size: 1.3rem;
       font-weight: 700;
       color: #000000;
       margin-bottom: 0.2rem;
     }
 
-    .menu-about .title {
+    .person-title {
       font-size: 0.85rem;
       color: #666666;
       font-weight: 600;
       text-transform: uppercase;
       letter-spacing: 0.5px;
-      margin-bottom: 1rem;
+      margin-bottom: 1.2rem;
+      padding-bottom: 0.8rem;
+      border-bottom: 1px solid #f0f0f0;
     }
 
-    .menu-about p {
-      font-size: 0.92rem;
+    .description {
+      font-size: 0.95rem;
       color: #444444;
       line-height: 1.6;
     }
 
-    /* Ana Ekran (Hero) */
-    .hero {
-      text-align: center;
-      padding: 2rem 1.5rem;
-      margin: auto 0;
-    }
-
-    .hero h1 {
-      font-size: 2.8rem;
-      font-weight: 600;
-      letter-spacing: -0.5px;
-      color: #000000;
-      margin-bottom: 0.8rem;
-    }
-
-    .hero p {
-      font-size: 1.1rem;
-      color: #666666;
-      font-weight: 400;
-      max-width: 450px;
-      margin: 0 auto;
-      line-height: 1.5;
-    }
-
     /* Alt Bilgi (Footer) */
     footer {
+      width: 100%;
       text-align: center;
-      padding: 1.5rem;
+      padding: 1.5rem 0 0.5rem 0;
       font-size: 0.85rem;
       color: #888888;
-      border-top: 1px solid #f0f0f0;
     }
   </style>
 </head>
 <body>
 
-  <!-- Üst Bar & Hamburger -->
-  <header class="navbar">
-    <button class="hamburger-btn" id="hamburgerBtn" aria-label="Menüyü Aç">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-  </header>
+  <div class="container">
+    <!-- Ana Başlık -->
+    <header>
+      <h1 class="hero-title">Van Kombi</h1>
+      <p class="hero-subtitle">Sıcak bir yuva, güvenli doğalgaz çözümleri.</p>
+    </header>
 
-  <!-- Karartma Katmanı -->
-  <div class="overlay" id="overlay"></div>
+    <!-- Doğrudan Arama Butonu -->
+    <a href="tel:+905079716265" class="call-btn">
+      📞 0507 971 62 65
+    </a>
 
-  <!-- Kayar Yan Menü -->
-  <nav class="side-menu" id="sideMenu">
-    <button class="close-btn" id="closeBtn" aria-label="Menüyü Kapat">&times;</button>
-    
-    <!-- İletişim Butonu -->
-    <a href="tel:+905079716265" class="call-btn">📞 Arama Yap</a>
-
-    <!-- Menü İçi Hakkında & İsim Bilgisi -->
-    <div class="menu-about">
+    <!-- Hakkında ve Hizmet Bilgileri Kartı -->
+    <main class="info-card">
       <div class="person-name">Erşad Tanrıtanır</div>
-      <div class="title">Van Kombi & Sıhhi Tesisat</div>
-      <p>
+      <div class="person-title">Van Kombi & Sıhhi Tesisat</div>
+      <p class="description">
         Kombi ve sıhhi tesisat işlerinizde hızlı, güvenilir ve profesyonel çözümler sunuyoruz. Deneyimli ekibimizle arıza, bakım ve onarım süreçlerini sorunsuz şekilde yönetirken; kombi ve petek bakımıyla daha yüksek verim ve doğalgaz tasarrufu sağlıyoruz.
       </p>
-    </div>
-  </nav>
-
-  <!-- Ana Ekran -->
-  <main class="hero">
-    <h1>Van Kombi</h1>
-    <p>Sıcak bir yuva, güvenli doğalgaz çözümleri.</p>
-  </main>
+    </main>
+  </div>
 
   <!-- Footer -->
   <footer>
     Developed by FurTek
   </footer>
 
-  <!-- Script -->
-  <script>
-    const hamburgerBtn = document.getElementById('hamburgerBtn');
-    const closeBtn = document.getElementById('closeBtn');
-    const sideMenu = document.getElementById('sideMenu');
-    const overlay = document.getElementById('overlay');
-
-    function openMenu() {
-      sideMenu.classList.add('active');
-      overlay.classList.add('active');
-    }
-
-    function closeMenu() {
-      sideMenu.classList.remove('active');
-      overlay.classList.remove('active');
-    }
-
-    hamburgerBtn.addEventListener('click', openMenu);
-    closeBtn.addEventListener('click', closeMenu);
-    overlay.addEventListener('click', closeMenu);
-  </script>
-
 </body>
 </html>
+```
